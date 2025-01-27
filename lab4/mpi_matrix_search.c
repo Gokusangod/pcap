@@ -57,3 +57,12 @@ int main(int argc, char** argv) {
     MPI_Finalize();
     return 0;
 }
+/*
+$ mpicc mpi_matrix_search.c -o mpi_matrix_search && mpirun -np 3 ./mpi_matrix_search
+Enter the elements of the 3x3 matrix:
+ 1 2 3
+ 2 4 5
+ 7 2 2
+Enter the element to be searched: 2
+The element 2 occurs 4 times in the matrix.
+*/
