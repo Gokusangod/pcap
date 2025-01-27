@@ -65,3 +65,13 @@ int main(int argc, char* argv[]) {
     MPI_Finalize();
     return 0;
 }
+/*
+$ mpirun -np 4 ./mpi_word_pattern
+Enter a word: pcap
+Output Word: p
+$ mpicc mpi_word_pattern.c -o mpi_word_pattern
+$ mpirun -np 4 ./mpi_word_pattern
+Enter a word: pcap
+Input word: pcap
+Output word: pccaaapppp
+*/
