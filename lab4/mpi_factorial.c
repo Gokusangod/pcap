@@ -47,3 +47,11 @@ int main(int argc, char** argv) {
     MPI_Finalize();
     return 0;
 }
+/*
+$ mpicc mpi_factorial.c -o mpi_factorial && mpirun -np 4 ./mpi_factorial
+Enter the value of N: 5
+Process 0: Factorial of 1 is 1, Running total is 1
+Process 1: Factorial of 2 is 2, Running total is 3
+Process 2: Factorial of 3 is 6, Running total is 9
+Process 3: Factorial of 4 is 24, Running total is 33
+*/
