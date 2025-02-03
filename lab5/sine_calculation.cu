@@ -53,3 +53,8 @@ int main() {
 
     return 0;
 }
+/*
+$ nvcc sine_calculation.cu -o sine_calculation && ./sine_calculation
+Sine values:
+0.000000 0.017452 0.034899 0.052336 0.069756 0.087156 0.104528 0.121869 0.139173 0.156434 
+*/
