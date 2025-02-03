@@ -76,3 +76,11 @@ int main() {
 
     return 0;
 }
+/*
+$ nvcc vector_addition.cu -o vector_addition && ./vector_addition
+Results for block size as n:
+0.000000 2.000000 4.000000 6.000000 8.000000 10.000000 12.000000 14.000000 16.000000 18.000000 
+Results for n threads:
+0.000000 2.000000 4.000000 6.000000 8.000000 10.000000 12.000000 14.000000 16.000000 18.000000 
+$ 
+*/
