@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <cuda.h>
 
 __global__ void addVectorsKernelNThreads(float *a, float *b, float *c, int n) {
@@ -19,8 +19,8 @@ int main() {
 
     // Initialize vectors
     for (int i = 0; i < n; i++) {
-        h_a[i] = static_cast<float>(i);
-        h_b[i] = static_cast<float>(i);
+        h_a[i] = (float)i;
+        h_b[i] = (float)i;
     }
 
     // Allocate memory on the device
@@ -40,11 +40,11 @@ int main() {
     cudaMemcpy(h_c, d_c, size, cudaMemcpyDeviceToHost);
 
     // Print results for n threads
-    std::cout << "Results for n threads:" << std::endl;
+    printf("Results for n threads:\n");
     for (int i = 0; i < 10; i++) {
-        std::cout << h_c[i] << " ";
+        printf("%f ", h_c[i]);
     }
-    std::cout << std::endl;
+    printf("\n");
 
     // Free device memory
     cudaFree(d_a);
