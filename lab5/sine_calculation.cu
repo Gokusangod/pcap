@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <cuda.h>
 #include <cmath>
 
@@ -19,7 +19,7 @@ int main() {
 
     // Initialize angles in radians
     for (int i = 0; i < n; i++) {
-        h_angles[i] = static_cast<float>(i) * (M_PI / 180.0); // Convert degrees to radians
+        h_angles[i] = (float)i * (M_PI / 180.0); // Convert degrees to radians
     }
 
     // Allocate memory on the device
@@ -37,11 +37,11 @@ int main() {
     cudaMemcpy(h_sines, d_sines, size, cudaMemcpyDeviceToHost);
 
     // Print results for the first 10 sine values
-    std::cout << "Sine values:" << std::endl;
+    printf("Sine values:\n");
     for (int i = 0; i < 10; i++) {
-        std::cout << h_sines[i] << " ";
+        printf("%f ", h_sines[i]);
     }
-    std::cout << std::endl;
+    printf("\n");
 
     // Free device memory
     cudaFree(d_angles);
