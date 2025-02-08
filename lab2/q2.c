@@ -18,7 +18,8 @@ int main(int argc, char *argv[]) {
             printf("Master (Process 0): Sending number %d to Process %d\n", number, i);
             MPI_Send(&number, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
         }
-    } else {
+    } 
+    else {
         MPI_Recv(&number, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
         printf("Process %d: Received number %d from Process 0\n", rank, number);
     }
